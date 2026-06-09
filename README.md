@@ -1,106 +1,183 @@
-TaskFlow — Full-Stack Task Management App
-A production-ready task management application built with React, Vite, Tailwind CSS, Node.js, Express, MongoDB, JWT Auth, Socket.IO, and Chart.js.
+# TaskFlow – Full-Stack Task Management Application
 
-✨ Features
-🔐 User Registration, Login & JWT Authentication
-📋 Create, Edit, Delete, View Tasks
-🏷️ Status: Pending / In Progress / Completed
-⚡ Priority: Low / Medium / High / Critical
-🔍 Search, Filter & Sort Tasks
-📅 Due Date Management with Overdue Detection
-📊 Analytics Dashboard with Chart.js (Doughnut, Bar, Line charts)
-🌙 Dark / Light Theme Toggle
-🔔 Toast Notifications
-🗑️ Confirmation Modals
-👤 User Profile & Settings Pages
-🔌 Real-time Updates via Socket.IO
-📱 Fully Responsive (Mobile, Tablet, Desktop)
-✨ Smooth Animations with Framer Motion
-💀 Loading Skeletons & Empty States
-📁 Project Structure
-taskmanager/
+TaskFlow is a full-stack task management application built to help users organize, track, and manage their work efficiently. The platform provides secure authentication, real-time updates, analytics, and a responsive user experience across desktop and mobile devices.
+
+## Overview
+
+TaskFlow enables users to create, manage, and monitor tasks through an intuitive interface. It combines modern frontend technologies with a scalable backend architecture to deliver a reliable productivity solution.
+
+## Features
+
+### Authentication and Security
+
+* User Registration and Login
+* JWT Authentication
+* Password Hashing with bcrypt
+* Protected Routes
+
+### Task Management
+
+* Create Tasks
+* Edit Tasks
+* Delete Tasks
+* View and Track Tasks
+* Task Status Management (Pending, In Progress, Completed)
+* Priority Management (Low, Medium, High, Critical)
+
+### Organization and Productivity
+
+* Search Tasks
+* Filter Tasks
+* Sort Tasks
+* Due Date Tracking
+* Overdue Task Detection
+
+### Analytics
+
+* Task Statistics Dashboard
+* Interactive Charts
+* Progress Tracking
+* Productivity Insights
+
+### User Experience
+
+* Responsive Design
+* Dark and Light Theme Support
+* Smooth Animations
+* Toast Notifications
+* Confirmation Modals
+* Loading Skeletons
+* Empty State Handling
+
+### Real-Time Functionality
+
+* Live Updates Using Socket.IO
+* Instant Data Synchronization
+
+### User Profile
+
+* Profile Management
+* Account Settings
+* Password Updates
+
+## Technology Stack
+
+### Frontend
+
+* React 18
+* Vite
+* Tailwind CSS
+* React Router
+* Axios
+* Framer Motion
+* Chart.js
+* React Hot Toast
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* Socket.IO
+* bcryptjs
+
+## Project Structure
+
+```text
+taskflow/
 ├── backend/
-│   ├── config/         # MongoDB connection
-│   ├── controllers/    # Auth & Task controllers
-│   ├── middleware/     # JWT auth & error handler
-│   ├── models/         # User & Task mongoose schemas
-│   ├── routes/         # Auth & Task API routes
-│   ├── server.js       # Express + Socket.IO server
-│   ├── .env.example    # Environment variable template
-│   └── package.json
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── server.js
+│
 └── frontend/
     ├── src/
-    │   ├── components/ # Reusable UI components
-    │   ├── contexts/   # Auth, Theme, Socket contexts
-    │   ├── hooks/      # useTasks custom hook
-    │   ├── pages/      # All page components
-    │   └── utils/      # API client & helpers
-    ├── index.html
-    ├── vite.config.js
-    ├── tailwind.config.js
-    └── package.json
-🚀 Installation & Setup
-Prerequisites
-Node.js v18+
-MongoDB (local or MongoDB Atlas)
-1. Backend Setup
+    │   ├── components/
+    │   ├── contexts/
+    │   ├── hooks/
+    │   ├── pages/
+    │   └── utils/
+    └── public/
+```
+
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/taskflow.git
+cd taskflow
+```
+
+### Backend Setup
+
+```bash
 cd backend
-cp .env.example .env
-# Edit .env with your MongoDB URI and JWT secret
 npm install
 npm run dev
-2. Frontend Setup
+```
+
+### Frontend Setup
+
+```bash
 cd frontend
 npm install
 npm run dev
-3. Open the App
-Visit: http://localhost:5173
+```
 
-🔧 Environment Variables (backend/.env)
+## Environment Variables
+
+Create a `.env` file inside the backend directory:
+
+```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/taskmanager
-JWT_SECRET=your_super_secret_key_here
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
 JWT_EXPIRE=7d
-NODE_ENV=development
 CLIENT_URL=http://localhost:5173
-📡 API Endpoints
-Auth
-Method	Route	Description
-POST	/api/auth/register	Register new user
-POST	/api/auth/login	Login user
-GET	/api/auth/me	Get current user
-PUT	/api/auth/profile	Update profile
-PUT	/api/auth/password	Change password
-Tasks
-Method	Route	Description
-GET	/api/tasks	Get all tasks (filterable)
-POST	/api/tasks	Create task
-GET	/api/tasks/:id	Get single task
-PUT	/api/tasks/:id	Update task
-DELETE	/api/tasks/:id	Delete task
-GET	/api/tasks/analytics	Get analytics data
-Query Params for GET /api/tasks
-status — pending, in-progress, completed
-priority — low, medium, high, critical
-search — text search in title/description
-sort — field to sort by (prefix - for descending)
-page — page number
-limit — results per page
-🛠️ Tech Stack
-Layer	Technology
-Frontend	React 18, Vite, Tailwind CSS
-Animations	Framer Motion
-Charts	Chart.js, react-chartjs-2
-Routing	React Router v6
-HTTP	Axios
-Realtime	Socket.IO
-Backend	Node.js, Express.js
-Database	MongoDB, Mongoose
-Auth	JWT, bcryptjs
-Notifications	react-hot-toast
-🏗️ Build for Production
-# Frontend
-cd frontend && npm run build
+```
 
-# Backend
-cd backend && NODE_ENV=production npm start
+## API Capabilities
+
+### Authentication
+
+* Register User
+* Login User
+* Get Current User
+* Update Profile
+* Change Password
+
+### Tasks
+
+* Create Task
+* Retrieve Tasks
+* Update Task
+* Delete Task
+* Analytics Data
+* Filtering and Sorting
+* Pagination
+
+## Build for Production
+
+### Frontend
+
+```bash
+cd frontend
+npm run build
+```
+
+### Backend
+
+```bash
+cd backend
+npm start
+```
+
+## License
+
+This project was developed for educational, portfolio, and learning purposes.
