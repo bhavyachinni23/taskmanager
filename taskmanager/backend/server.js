@@ -22,7 +22,10 @@ const io = new Server(server, {
   }
 });
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 app.use(express.json());
 
 // Make io accessible in routes
